@@ -13,7 +13,7 @@ public class InvalidCredentialsHandler {
     @ExceptionHandler(AccessDeniedException.class)
     @ResponseStatus(HttpStatus.UNAUTHORIZED)
     public void handleConflict(AccessDeniedException e, HttpServletResponse response) throws IOException{
-        response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Invalid login credentials");
+        response.sendError(HttpServletResponse.SC_UNAUTHORIZED, e.getMessage());
     }
 
 }

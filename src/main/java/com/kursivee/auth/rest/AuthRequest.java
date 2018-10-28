@@ -1,11 +1,9 @@
 package com.kursivee.auth.rest;
 
-public class LoginRequest {
+public class AuthRequest {
 
     private String username;
     private String password;
-
-    public LoginRequest() {}
 
     public String getUsername() {
         return username;
@@ -25,7 +23,7 @@ public class LoginRequest {
 
     @Override
     public String toString() {
-        return "LoginRequest{" +
+        return "AuthRequest{" +
                 "username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 '}';

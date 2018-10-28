@@ -31,7 +31,7 @@ public class AdminFilter implements Filter {
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         HttpServletResponse response = (HttpServletResponse) servletResponse;
-        DecodedJWT token = tokenService.validate(request.getHeader(TokenService.HEADER));
+        DecodedJWT token = tokenService.verifyToken(request.getHeader(TokenService.HEADER));
         if(null != token) {
             if(token.getClaim("Role").asString().equals("ADMIN")) {
                 filterChain.doFilter(servletRequest, servletResponse);

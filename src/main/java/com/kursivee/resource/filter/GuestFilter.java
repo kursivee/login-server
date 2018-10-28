@@ -31,7 +31,7 @@ public class GuestFilter implements Filter {
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         HttpServletResponse response = (HttpServletResponse) servletResponse;
-        DecodedJWT token = tokenService.validate(request.getHeader(TokenService.HEADER));
+        DecodedJWT token = tokenService.verifyToken(request.getHeader(TokenService.HEADER));
         if(null != token) {
             String role = token.getClaim("Role").asString();
             if(role.equals("ADMIN") || role.equals("GUEST")) {
