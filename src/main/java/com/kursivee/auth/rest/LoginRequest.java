@@ -1,4 +1,4 @@
-package com.kursivee.controller;
+package com.kursivee.auth.rest;
 
 public class LoginRequest {
 
