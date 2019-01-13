@@ -16,3 +16,12 @@ Guest can only access /guest endpoints.
 /resource - folder containing the resource "server"
 
 I say "server" because this will eventually be two different projects as opposed to being smashed into this one.
+
+
+### How to run
+```
+mvn clean package
+docker build --tag=name .
+docker run --network host name
+
+```
