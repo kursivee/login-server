@@ -17,6 +17,8 @@ Guest can only access /guest endpoints.
 
 I say "server" because this will eventually be two different projects as opposed to being smashed into this one.
 
+Make sure you update the application properties to have the proper configuration
+
 
 ### How to run
 ```
